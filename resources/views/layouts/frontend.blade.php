@@ -11,8 +11,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-
-    <link rel="icon" href="../assets/images/favicon/1.png" type="image/x-icon">
+    <link rel="icon" href="{{ asset('frontend/images/favicon/1.png') }}" type="image/x-icon">
 
     <title>@yield('title', config('app.name', 'Laravel'))</title>
 
@@ -24,22 +23,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap">
 
-    <!-- bootstrap css -->
-    <link id="rtl-link" rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.css">
-
-    <!-- wow css -->
-    <link rel="stylesheet" href="../assets/css/animate.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 
     <!-- Font Awesome css -->
     <script src="https://kit.fontawesome.com/cc2d6331a5.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/animate.css">
-
-    <!-- Template css -->
-    <link id="color-link" rel="stylesheet" type="text/css" href="../assets/css/style.css">
-
     <!-- Styles -->
-    @vite(['resources/sass/app.scss'])
+    @vite(['resources/css/frontend.css', 'resources/js/frontend.js'])
     @livewireStyles
 </head>
 
@@ -47,12 +39,7 @@
 
 <!-- Loader Start -->
 <div class="fullpage-loader">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span>
 </div>
 <!-- Loader End -->
 
@@ -107,109 +94,6 @@
 @include('layouts.partials.frontend.footer')
 <!-- Footer Section End -->
 
-<!-- Quick View Modal Box Start -->
-<div class="modal fade theme-modal view-modal" id="view" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-sm-down">
-        <div class="modal-content">
-            <div class="modal-header p-0">
-                <button type="button" class="btn-close" data-bs-dismiss="modal">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="row g-sm-4 g-2">
-                    <div class="col-lg-6">
-                        <div class="slider-image">
-                            <img src="../assets/images/product/category/1.jpg" class="img-fluid blur-up lazyload"
-                                 alt="">
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="right-sidebar-modal">
-                            <h4 class="title-name">Peanut Butter Bite Premium Butter Cookies 600 g</h4>
-                            <h4 class="price">$36.99</h4>
-                            <div class="product-rating">
-                                <ul class="rating">
-                                    <li>
-                                        <i data-feather="star" class="fill"></i>
-                                    </li>
-                                    <li>
-                                        <i data-feather="star" class="fill"></i>
-                                    </li>
-                                    <li>
-                                        <i data-feather="star" class="fill"></i>
-                                    </li>
-                                    <li>
-                                        <i data-feather="star" class="fill"></i>
-                                    </li>
-                                    <li>
-                                        <i data-feather="star"></i>
-                                    </li>
-                                </ul>
-                                <span class="ms-2">8 Reviews</span>
-                                <span class="ms-2 text-danger">6 sold in last 16 hours</span>
-                            </div>
-
-                            <div class="product-detail">
-                                <h4>Product Details :</h4>
-                                <p>Candy canes sugar plum tart cotton candy chupa chups sugar plum chocolate I love.
-                                    Caramels marshmallow icing dessert candy canes I love soufflé I love toffee.
-                                    Marshmallow pie sweet sweet roll sesame snaps tiramisu jelly bear claw. Bonbon
-                                    muffin I love carrot cake sugar plum dessert bonbon.</p>
-                            </div>
-
-                            <ul class="brand-list">
-                                <li>
-                                    <div class="brand-box">
-                                        <h5>Brand Name:</h5>
-                                        <h6>Black Forest</h6>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="brand-box">
-                                        <h5>Product Code:</h5>
-                                        <h6>W0690034</h6>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="brand-box">
-                                        <h5>Product Type:</h5>
-                                        <h6>White Cream Cake</h6>
-                                    </div>
-                                </li>
-                            </ul>
-
-                            <div class="select-size">
-                                <h4>Cake Size :</h4>
-                                <select class="form-select select-form-size">
-                                    <option selected>Select Size</option>
-                                    <option value="1.2">1/2 KG</option>
-                                    <option value="0">1 KG</option>
-                                    <option value="1.5">1/5 KG</option>
-                                    <option value="red">Red Roses</option>
-                                    <option value="pink">With Pink Roses</option>
-                                </select>
-                            </div>
-
-                            <div class="modal-button">
-                                <button onclick="location.href = 'cart.html';"
-                                        class="btn btn-md add-cart-button icon">Add
-                                    To Cart</button>
-                                <button onclick="location.href = 'product-left.html';"
-                                        class="btn theme-bg-color view-button icon text-white fw-bold btn-md">
-                                    View More Details</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Quick View Modal Box End -->
 
 <!-- Location Modal Start -->
 <div class="modal location-modal fade theme-modal" id="locationModal" tabindex="-1">
@@ -311,85 +195,6 @@
 </div>
 <!-- Location Modal End -->
 
-<!-- Deal Box Modal Start -->
-<div class="modal fade theme-modal deal-modal" id="deal-box" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div>
-                    <h5 class="modal-title w-100" id="deal_today">Deal Today</h5>
-                    <p class="mt-1 text-content">Recommended deals for you.</p>
-                </div>
-                <button type="button" class="btn-close" data-bs-dismiss="modal">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="deal-offer-box">
-                    <ul class="deal-offer-list">
-                        <li class="list-1">
-                            <div class="deal-offer-contain">
-                                <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="../assets/images/vegetable/product/10.png" class="blur-up lazyload"
-                                         alt="">
-                                </a>
-
-                                <a href="shop-left-sidebar.html" class="deal-contain">
-                                    <h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
-                                    <h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
-                                </a>
-                            </div>
-                        </li>
-
-                        <li class="list-2">
-                            <div class="deal-offer-contain">
-                                <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="../assets/images/vegetable/product/11.png" class="blur-up lazyload"
-                                         alt="">
-                                </a>
-
-                                <a href="shop-left-sidebar.html" class="deal-contain">
-                                    <h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
-                                    <h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
-                                </a>
-                            </div>
-                        </li>
-
-                        <li class="list-3">
-                            <div class="deal-offer-contain">
-                                <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="../assets/images/vegetable/product/12.png" class="blur-up lazyload"
-                                         alt="">
-                                </a>
-
-                                <a href="shop-left-sidebar.html" class="deal-contain">
-                                    <h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
-                                    <h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
-                                </a>
-                            </div>
-                        </li>
-
-                        <li class="list-1">
-                            <div class="deal-offer-contain">
-                                <a href="shop-left-sidebar.html" class="deal-image">
-                                    <img src="../assets/images/vegetable/product/13.png" class="blur-up lazyload"
-                                         alt="">
-                                </a>
-
-                                <a href="shop-left-sidebar.html" class="deal-contain">
-                                    <h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
-                                    <h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Deal Box Modal End -->
-
 <!-- Tap to top and theme setting button start -->
 <div class="theme-option">
     <div class="back-to-top">
@@ -404,50 +209,9 @@
 <div class="bg-overlay"></div>
 <!-- Bg overlay End -->
 
-<!-- latest jquery-->
-<script src="../assets/js/jquery-3.6.0.min.js"></script>
+<script src="{{ asset('frontend/assets/js/wow.min.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/custom-wow.js') }}"></script>
 
-<!-- jquery ui-->
-<script src="../assets/js/jquery-ui.min.js"></script>
-
-<!-- Bootstrap js-->
-<script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
-<script src="../assets/js/bootstrap/bootstrap-notify.min.js"></script>
-<script src="../assets/js/bootstrap/popper.min.js"></script>
-
-<!-- feather icon js-->
-<script src="../assets/js/feather/feather.min.js"></script>
-<script src="../assets/js/feather/feather-icon.js"></script>
-
-<!-- Lazyload Js -->
-<script src="../assets/js/lazysizes.min.js"></script>
-
-<!-- Slick js-->
-<script src="../assets/js/slick/slick.js"></script>
-<script src="../assets/js/slick/slick-animation.min.js"></script>
-<script src="../assets/js/slick/custom_slick.js"></script>
-
-<!-- Auto Height Js -->
-<script src="../assets/js/auto-height.js"></script>
-
-<!-- Timer Js -->
-<script src="../assets/js/timer1.js"></script>
-
-<!-- Fly Cart Js -->
-<script src="../assets/js/fly-cart.js"></script>
-
-<!-- Quantity js -->
-<script src="../assets/js/quantity-2.js"></script>
-
-<!-- WOW js -->
-<script src="../assets/js/wow.min.js"></script>
-<script src="../assets/js/custom-wow.js"></script>
-
-<!-- script js -->
-<script src="../assets/js/script.js"></script>
-
-<!-- scripts -->
-@vite(['resources/js/app.js'])
 @livewireScripts
 </body>
 </html>

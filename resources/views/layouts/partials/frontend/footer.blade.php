@@ -54,7 +54,7 @@
                     <div class="footer-logo">
                         <div class="theme-logo">
                             <a href="index.html">
-                                <img src="../assets/images/logo/1.png" class="blur-up lazyload" alt="">
+                                <img src="{{ asset('frontend/images/logo/1.png') }}" class="blur-up lazyload" alt="">
                             </a>
                         </div>
 
@@ -212,11 +212,7 @@
 
         <div class="sub-footer section-small-space">
             <div class="reserve">
-                <h6 class="text-content">©2022 Fastkart All rights reserved</h6>
-            </div>
-
-            <div class="payment">
-                <img src="../assets/images/payment/1.png" class="blur-up lazyload" alt="">
+                <h6 class="text-content">©{{ date('Y') }} Tasneem Creation All rights reserved</h6>
             </div>
 
             <div class="social-link">

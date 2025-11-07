@@ -8,11 +8,18 @@
     },
     "devDependencies": {
         "@popperjs/core": "^2.11.6",
+        "animate.css": "^4.1.1",
         "axios": "^1.11.0",
         "bootstrap": "^5.2.3",
         "concurrently": "^9.0.1",
+        "feather-icons": "^4.29.2",
+        "jquery": "^3.7.1",
+        "jquery-ui-dist": "^1.13.3",
         "laravel-vite-plugin": "^2.0.0",
+        "lazysizes": "^5.3.2",
         "sass": "^1.56.1",
-        "vite": "^7.0.7"
+        "slick-carousel": "^1.8.1",
+        "vite": "^7.0.7",
+        "wowjs": "^1.1.3"
     }
 }

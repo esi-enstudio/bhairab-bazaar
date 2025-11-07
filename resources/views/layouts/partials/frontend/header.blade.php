@@ -34,62 +34,6 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3">
-                    <ul class="about-list right-nav-about">
-                        <li class="right-nav-list">
-                            <div class="dropdown theme-form-select">
-                                <button class="btn dropdown-toggle" type="button" id="select-language"
-                                        data-bs-toggle="dropdown">
-                                    <img src="../assets/images/country/united-states.png"
-                                         class="img-fluid blur-up lazyload" alt="">
-                                    <span>English</span>
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-end">
-                                    <li>
-                                        <a class="dropdown-item" href="javascript:void(0)" id="english">
-                                            <img src="../assets/images/country/united-kingdom.png"
-                                                 class="img-fluid blur-up lazyload" alt="">
-                                            <span>English</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="javascript:void(0)" id="france">
-                                            <img src="../assets/images/country/germany.png"
-                                                 class="img-fluid blur-up lazyload" alt="">
-                                            <span>Germany</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="javascript:void(0)" id="chinese">
-                                            <img src="../assets/images/country/turkish.png"
-                                                 class="img-fluid blur-up lazyload" alt="">
-                                            <span>Turki</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="right-nav-list">
-                            <div class="dropdown theme-form-select">
-                                <button class="btn dropdown-toggle" type="button" id="select-dollar"
-                                        data-bs-toggle="dropdown">
-                                    <span>USD</span>
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-end sm-dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item" id="aud" href="javascript:void(0)">AUD</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" id="eur" href="javascript:void(0)">EUR</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" id="cny" href="javascript:void(0)">CNY</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </div>
     </div>
@@ -106,20 +50,22 @@
                                 </span>
                         </button>
                         <a href="index.html" class="web-logo nav-logo">
-                            <img src="../assets/images/logo/1.png" class="img-fluid blur-up lazyload" alt="">
+                            <p class="pacifico-regular fs-1">Bhairab <span style="color: #222323">bazaar</span>.</p>
+{{--                            <img src="{{ asset('frontend/images/logo/1.png') }}"--}}
+{{--                                 class="img-fluid blur-up lazyload" alt="">--}}
                         </a>
 
                         <div class="middle-box">
-                            <div class="location-box">
-                                <button class="btn location-button" data-bs-toggle="modal"
-                                        data-bs-target="#locationModal">
-                                        <span class="location-arrow">
-                                            <i data-feather="map-pin"></i>
-                                        </span>
-                                    <span class="locat-name">Your Location</span>
-                                    <i class="fa-solid fa-angle-down"></i>
-                                </button>
-                            </div>
+{{--                            <div class="location-box">--}}
+{{--                                <button class="btn location-button" data-bs-toggle="modal"--}}
+{{--                                        data-bs-target="#locationModal">--}}
+{{--                                        <span class="location-arrow">--}}
+{{--                                            <i data-feather="map-pin"></i>--}}
+{{--                                        </span>--}}
+{{--                                    <span class="locat-name">Your Location</span>--}}
+{{--                                    <i class="fa-solid fa-angle-down"></i>--}}
+{{--                                </button>--}}
+{{--                            </div>--}}
 
                             <div class="search-box">
                                 <div class="input-group">
@@ -183,7 +129,7 @@
                                                 <li class="product-box-contain">
                                                     <div class="drop-cart">
                                                         <a href="product-left-thumbnail.html" class="drop-image">
-                                                            <img src="../assets/images/vegetable/product/1.png"
+                                                            <img src="{{ asset('frontend/images/vegetable/product/1.png') }}"
                                                                  class="blur-up lazyload" alt="">
                                                         </a>
 
@@ -202,7 +148,7 @@
                                                 <li class="product-box-contain">
                                                     <div class="drop-cart">
                                                         <a href="product-left-thumbnail.html" class="drop-image">
-                                                            <img src="../assets/images/vegetable/product/2.png"
+                                                            <img src="{{ asset('frontend/images/vegetable/product/2.png') }}"
                                                                  class="blur-up lazyload" alt="">
                                                         </a>
 
@@ -886,7 +832,7 @@
                                                         <div class="dropdown-column m-0">
                                                             <div class="menu-img-banner">
                                                                 <a class="text-title" href="product-circle.html">
-                                                                    <img src="../assets/images/mega-menu.png"
+                                                                    <img src="{{ asset('frontend/images/mega-menu.png') }}"
                                                                          alt="banner">
                                                                 </a>
                                                             </div>
