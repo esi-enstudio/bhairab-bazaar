@@ -16,6 +16,7 @@
     <!-- Vite CSS & JS -->
     @vite(['resources/css/backend.css', 'resources/js/backend.js'])
 
+    @livewireStyles
 </head>
 <body>
     <div id="global-loader">
@@ -114,5 +115,8 @@
     </div>
     <!-- /Add Stock -->
 
+    <script src="{{ asset('backend/assets/js/moment.min.js') }}"></script>
+
+    @livewireScripts
 </body>
 </html>
