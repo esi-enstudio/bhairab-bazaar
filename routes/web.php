@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Auth\AdminLoginController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -15,9 +15,17 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Auth::routes();
 
 // Backend Routes
-Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::middleware(['auth', 'is_admin'])->group(function () {
+    // অ্যাডমিন ড্যাশবোর্ডের জন্য একটি রুট (পরে এটিকে মিডলওয়্যার দিয়ে সুরক্ষিত করব)
+    Route::get('/admin/dashboard', function () {
+        return view('backend.dashboard'); // আপনার অ্যাডমিন ড্যাশবোর্ড ভিউ
+    })->name('admin.dashboard');
 
     // ভবিষ্যতে আপনার ব্যাকএন্ডের অন্যান্য সব রুট এই গ্রুপের ভেতরে যোগ করতে পারবেন
     // যেমন: Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+});
+
+Route::prefix('admin')->group(function () {
+    Route::get('/login', [AdminLoginController::class, 'showLoginForm'])->name('admin.login');
+    Route::post('/login', [AdminLoginController::class, 'login'])->name('admin.login.submit');
 });
