@@ -1,0 +1,23 @@
+/* Bootstrap CSS */
+@import './backend/bootstrap.min.css';
+
+/* Datetimepicker CSS */
+@import './backend/bootstrap-datetimepicker.min.css';
+
+/* animation CSS */
+@import './backend/animate.css';
+
+/* Select2 CSS */
+@import './backend/select2.min.css';
+
+/* Daterangepikcer CSS */
+@import './backend/daterangepicker.css';
+
+/* Tabler Icon CSS */
+@import './backend/tabler-icons.min.css';
+
+/* Fontawesome CSS */
+@import './backend/all.min.css';
+
+/* Main CSS */
+@import './backend/style.css';
