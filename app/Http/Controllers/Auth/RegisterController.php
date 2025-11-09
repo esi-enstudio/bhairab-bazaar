@@ -51,7 +51,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:8'],
         ]);
     }
 
@@ -63,10 +63,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data): User
     {
-        return User::create([
+        $user =  User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        // নতুন তৈরি হওয়া ব্যবহারকারীকে 'User' রোলটি দিন
+        // এই 'User' নামটি আমাদের RoleSeeder-এ তৈরি করা নামের সাথে মিলতে হবে
+        $user->assignRole('User');
+
+        // ব্যবহারকারী অবজেক্টটি রিটার্ন করুন
+        return $user;
     }
 }

@@ -16,7 +16,7 @@
     <!-- Vite CSS & JS -->
     @vite(['resources/css/backend.css', 'resources/js/backend.js'])
 
-    @livewireStyles
+    @livewireStyles                   
 </head>
 <body>
     <div id="global-loader">

@@ -179,34 +179,50 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="right-side onhover-dropdown">
-                                    <div class="delivery-login-box">
-                                        <div class="delivery-icon">
-                                            <i data-feather="user"></i>
+
+                                @auth()
+                                    <li class="right-side onhover-dropdown">
+                                        <div class="delivery-login-box">
+                                            <div class="delivery-icon">
+                                                <i data-feather="user"></i>
+                                            </div>
+
+                                            <div class="delivery-detail">
+                                                <h6>Hello,</h6>
+                                                <h5>{{ auth()->user()->name }}</h5>
+                                            </div>
+
                                         </div>
-                                        <div class="delivery-detail">
-                                            <h6>Hello,</h6>
-                                            <h5>My Account</h5>
+
+                                        <div class="onhover-div onhover-div-login">
+                                            <ul class="user-box-name">
+                                                <li class="product-box-contain">
+                                                    <i></i>
+                                                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                                </li>
+                                            </ul>
+
+                                            {{-- এটি একটি অদৃশ্য ফর্ম যা POST রিকোয়েস্ট পাঠাবে --}}
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                @csrf
+                                            </form>
                                         </div>
-                                    </div>
+                                    </li>
+                                @endauth
 
-                                    <div class="onhover-div onhover-div-login">
-                                        <ul class="user-box-name">
-                                            <li class="product-box-contain">
-                                                <i></i>
-                                                <a href="login.html">Log In</a>
-                                            </li>
 
-                                            <li class="product-box-contain">
-                                                <a href="sign-up.html">Register</a>
-                                            </li>
+                                @guest()
+                                    <p class="m-0 fs-5">
+                                        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                        <a href="{{ route('login') }}">Log In</a>
+                                    </p>
+                                @endguest
 
-                                            <li class="product-box-contain">
-                                                <a href="forgot.html">Forgot Password</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
+
+
+
+
+
                             </ul>
                         </div>
                     </div>

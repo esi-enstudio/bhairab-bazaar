@@ -12,7 +12,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
 
-Auth::routes();
+
 
 // Backend Routes
 Route::middleware(['auth', 'is_admin'])->group(function () {
@@ -26,6 +26,13 @@ Route::middleware(['auth', 'is_admin'])->group(function () {
 });
 
 Route::prefix('admin')->group(function () {
-    Route::get('/login', [AdminLoginController::class, 'showLoginForm'])->name('admin.login');
-    Route::post('/login', [AdminLoginController::class, 'login'])->name('admin.login.submit');
+    Route::get('/login', function () {
+        return view('auth.admin-login');
+    })->name('admin.login');
 });
+
+
+
+
+
+Auth::routes(['verify' => true]);
